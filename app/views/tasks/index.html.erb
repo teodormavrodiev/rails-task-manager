@@ -1,0 +1,13 @@
+<ol>
+<% @tasks.each do |t| %>
+
+  <li>
+  <%= t.goal %>, should take: <%= t.hours %> hours.
+  <%= link_to "Delete me", task_path(t), method: :delete %>
+  <%= link_to "Visit me", task_path(t) %>
+  <%= link_to "Edit me", edit_task_path(t) %>
+  </li>
+
+<% end %>
+</ol>
+<%= link_to "Add new task", new_task_path %>
